@@ -12,7 +12,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   var numeroSorteado = 0;
   var qtdSorteios = 0;
-  var ultimoSorteio = 0;
+  var penUltimoSorteio = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
             numeroSorteado.toString(), 
             style: GoogleFonts.roboto(fontSize: 100) ),
           Text(
-            "O último número sorteado foi: $ultimoSorteio",
+            "O último número sorteado foi: $penUltimoSorteio",
             style: GoogleFonts.roboto(fontSize: 50) )
         ],
       ),
@@ -41,12 +41,12 @@ class _HomePageState extends State<HomePage> {
         onPressed: () {
           setState(() {
             qtdSorteios++;
+            penUltimoSorteio = numeroSorteado;
             numeroSorteado = SorteadorService.sortearNumero();
-            
+             
 
           });
-          ultimoSorteio = numeroSorteado;
-          debugPrint(numeroSorteado.toString());
+          
         },
       ),
     );
