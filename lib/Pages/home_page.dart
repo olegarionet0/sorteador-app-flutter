@@ -1,4 +1,4 @@
-  import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:meu_app_flutter_clone/services/sorteador_service.dart';
 
@@ -18,22 +18,25 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Meu Primeiro App Flutter", style:GoogleFonts.pacifico()),
+        title: Text("Meu Primeiro App Flutter", style: GoogleFonts.pacifico()),
         backgroundColor: Theme.of(context).colorScheme.primary,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Text(
-            "Tivemos até agora $qtdSorteios sorteios!", 
-            style: GoogleFonts.roboto(fontSize: 70) ),
+            "Tivemos até agora $qtdSorteios sorteios!",
+            style: GoogleFonts.roboto(fontSize: 70),
+          ),
           Text(
-            numeroSorteado.toString(), 
-            style: GoogleFonts.roboto(fontSize: 100) ),
+            numeroSorteado.toString(),
+            style: GoogleFonts.roboto(fontSize: 100),
+          ),
           Text(
             "O último número sorteado foi: $penUltimoSorteio",
-            style: GoogleFonts.roboto(fontSize: 50) )
+            style: GoogleFonts.roboto(fontSize: 50),
+          ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
@@ -43,10 +46,7 @@ class _HomePageState extends State<HomePage> {
             qtdSorteios++;
             penUltimoSorteio = numeroSorteado;
             numeroSorteado = SorteadorService.sortearNumero();
-             
-
           });
-          
         },
       ),
     );
