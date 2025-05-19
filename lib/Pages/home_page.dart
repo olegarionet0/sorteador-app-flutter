@@ -29,42 +29,66 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Text(
-              "Tivemos até agora $qtdSorteios sorteios!",
-              style: GoogleFonts.roboto(fontSize: 70),
+            Expanded(
+              child: Container(
+                width: double.infinity,
+                color: Colors.teal,
+                child: Text(
+                  "Tivemos até agora $qtdSorteios sorteios!",
+                  style: GoogleFonts.roboto(fontSize: 70),
+                ),
+              ),
             ),
-            Text(
-              numeroSorteado.toString(),
-              style: GoogleFonts.roboto(fontSize: 100),
+            Expanded(
+              child: Container(
+                width: double.infinity,
+                color: Colors.purple,
+                child: Text(
+                  numeroSorteado.toString(),
+                  style: GoogleFonts.roboto(fontSize: 100),
+                ),
+              ),
             ),
-            Text(
-              "O último número sorteado foi: $penUltimoSorteio",
-              style: GoogleFonts.roboto(fontSize: 50),
+            Expanded(
+              child: Container(
+                width: double.infinity,
+                color: Colors.white,
+                child: Text(
+                  "O último número sorteado foi: $penUltimoSorteio",
+                  style: GoogleFonts.roboto(fontSize: 50),
+                ),
+              ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
+                  flex: 2,
                   child: Container(
                     color: Colors.red,
-                    child: Text("10", style: GoogleFonts.roboto(fontSize: 50)),
+                    child: Text(
+                      "nome",
+                      style: GoogleFonts.roboto(fontSize: 50),
+                    ),
                   ),
                 ),
                 Expanded(
+                  flex: 5,
                   child: Container(
                     color: Colors.blue,
                     child: Center(
                       child: Text(
-                        "20",
+                        "Olegario Neto",
                         style: GoogleFonts.roboto(fontSize: 50),
                       ),
                     ),
                   ),
                 ),
                 Expanded(
+                  flex: 2,
                   child: Container(
                     color: Colors.green,
-                    child: Text("30", style: GoogleFonts.roboto(fontSize: 50)),
+                    child: Text("25", style: GoogleFonts.roboto(fontSize: 50)),
                   ),
                 ),
               ],
